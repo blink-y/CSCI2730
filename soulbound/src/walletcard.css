@@ -1,0 +1,70 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F58F7C; /* Light background for contrast */
+    margin: 0;
+    padding: 0px;
+}
+
+.container {
+    background-color: #F58F7C; /* White background for the box */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height : 100%;
+
+}
+
+.containerHeader {
+    background-color: #2c2b30; /* White background for the box */
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height : 100px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.accountDisplay, .balanceDisplay {
+    margin: 15px 15px;
+    padding: 8px;
+    width: 35%;
+    align-items: top;
+    justify-content: end;
+    justify-self: center;
+    align-self: center;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    background-color: #e7f3fe; /* Light blue background */
+}
+
+button {
+    background-color: #D6D6D6; /* Blue button */
+    color: #2c2b30;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    align-items: center;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+button:hover {
+    background-color: #ffff; /* Darker blue on hover */
+}
+
+h3 {
+    margin: 0;
+}
+
+.walletConnectBtn {
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+}
