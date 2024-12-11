@@ -2,7 +2,8 @@ import express from "express";
 import userSchema from './Schema.js';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import mintToken from './mintToken.js';
+import { mintToken, checkToken, getInfo } from './mintToken.js';
+
 const mongoDB = 'mongodb+srv://admin:admin@cluster0.7mvqd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 main().catch(err => console.log(err));
@@ -43,14 +44,24 @@ app.post('/getUser', async (req, res) => {
 app.post('/mintSBT', async (req, res) => {
     const { walletAddress } = req.body;
     await mintToken(walletAddress);
-    res.send('Minted token');
+    console.log('Minted token');
+
+    const tokenInfo = await getInfo();
+    res.send(tokenInfo);
 });
+
+app.get('/getTokenInfo', async (req, res) => {
+    const tokenInfo = await getInfo();
+    res.send(tokenInfo);
+});
+
 
 app.post('/findUser', async (req, res) => {
     const { walletAddress } = req.body;
     console.log(walletAddress);
-    const user = await userSchema.findOne({ walletAddress: walletAddress });
-    if (!user) {
+    const user = await checkToken(walletAddress);
+    console.log(user.hasToken);
+    if (user.hasToken == false) {
         res.send('0');
         console.log('User not found');
     } else {

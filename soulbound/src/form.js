@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './form.css';
+import TokenComponent from './tokenData';
 const UserForm = (props) => {
     const [formData, setFormData] = useState({
         name: '',
@@ -72,6 +73,7 @@ const UserForm = (props) => {
             setAfterMint(true);  // Set loading to false after the fetch request
         }
     };
+
 
     return (
         <div className="form-container">
@@ -165,12 +167,6 @@ const UserForm = (props) => {
                 </div>
                 <button className="submitbutton" type="submit" onClick={submitFormData}>Submit</button>
             </form>
-            {/* {mint ? <button onClick={mintToken}>Mint Soul Bound Token</button> : null}
-            {mint ? (loading ? (
-                <div>Loading...</div> // Show loading indicator
-            ) : (
-                <h3>Token Minted</h3> // Show button when not loading
-            )) : (null)} */}
             {mint ? (
                 <>
                     <button className="mintbutton" onClick={mintToken}>Mint Soul Bound Token</button>
@@ -194,7 +190,7 @@ const UserForm = (props) => {
                     )}
                 </>
             ) : null}
-            {afterMint & !loading ? <h3>Token Minted</h3> : null}
+            {afterMint && !loading ? <TokenComponent /> : null}
 
         </div>
     );

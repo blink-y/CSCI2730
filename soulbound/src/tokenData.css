@@ -1,0 +1,25 @@
+.token-container {
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+    background-color: #f2c4ce;
+    height: auto;
+}
+
+.token-name {
+    font-size: 24px;
+    color: #333;
+}
+
+.token-description {
+    font-size: 16px;
+    color: #666;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}

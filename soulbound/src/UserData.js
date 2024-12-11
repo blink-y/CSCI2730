@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './userdata.css'
+import TokenComponent from './tokenData';
 
 const UserData = (props) => {
     const [user, setUser] = useState(null);
@@ -27,34 +28,43 @@ const UserData = (props) => {
     return (
         <><div className='container'>
             <button onClick={getUserData}>Get User Data</button>
-        </div><div>
-                {user ?
-                    <>
-                        <form className="user-info-form">
-                            <h2>User Information</h2>
-                            <div className="form-group">
-                                <label htmlFor="name">Name:</label>
-                                <input type="text" id="name" value={user.name} readOnly />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="hkid">HKID:</label>
-                                <input type="text" id="hkid" value={user.hkid} readOnly />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="dateOfBirth">Date of Birth:</label>
-                                <input type="text" id="dateOfBirth" value={user.dateOfBirth} readOnly />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="nationality">Nationality:</label>
-                                <input type="text" id="nationality" value={user.nationality} readOnly />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="gender">Gender:</label>
-                                <input type="text" id="gender" value={user.gender} readOnly />
-                            </div>
-                        </form>
-                    </> : null}
-            </div></>
+        </div>
+            <div className='data-container'>
+                <div>
+                    {user ?
+                        <>
+                            <form className="user-info-form">
+                                <h2>User Information</h2>
+                                <div className="form-group">
+                                    <label htmlFor="name">Name:</label>
+                                    <input type="text" id="name" value={user.name} readOnly />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="hkid">HKID:</label>
+                                    <input type="text" id="hkid" value={user.hkid} readOnly />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="dateOfBirth">Date of Birth:</label>
+                                    <input type="text" id="dateOfBirth" value={user.dateOfBirth} readOnly />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="nationality">Nationality:</label>
+                                    <input type="text" id="nationality" value={user.nationality} readOnly />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="gender">Gender:</label>
+                                    <input type="text" id="gender" value={user.gender} readOnly />
+                                </div>
+                            </form>
+
+
+                        </> : null}
+                </div>
+                <div>
+                    {user ? <TokenComponent /> : null}
+                </div>
+            </div>
+        </>
 
     );
 }

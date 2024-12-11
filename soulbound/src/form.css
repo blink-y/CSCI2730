@@ -66,7 +66,7 @@
   }
   .submitbutton{
     background-color: #ff0055;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -76,7 +76,7 @@
   }
   .mintbutton{
     background-color: #ff7b00;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
